@@ -4,7 +4,6 @@ import State from "../scrolling_menu/state/State";
 function Modal() {
     return(
         <div className="container">
-            <a href="employee-list.html">View Current Employees</a>
             <h2>Create Employee</h2>
             <form>
                 <label htmlFor="first-name">First Name</label>
@@ -36,7 +35,6 @@ function Modal() {
                 </fieldset>
                 <Department/>
             </form>
-            
             <button>Save</button>
         </div>
     )

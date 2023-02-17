@@ -1,0 +1,24 @@
+nav{
+    display: flex;
+}
+
+.Header-img{
+    width: 50%;
+    margin-left: 18%;
+}
+
+.Header{
+    width: 65%;
+    text-align-last: end;
+    align-self: center;
+
+}
+
+.Header-Home{
+    margin-right: 16%;
+    text-decoration: none;
+}
+
+.Header-Employees{
+    text-decoration: none;
+}

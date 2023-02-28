@@ -5,6 +5,7 @@ import Home from './page/Home';
 import EmployeeList from "./page/EmployeeList";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './componant/header/Header';
+import Footer from "./componant/footer/Footer";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,7 @@ root.render(
             <Route path="/" element={<Home />} />
             <Route path="/employee-list" element={<EmployeeList />} />
           </Routes>
+          <Footer/>
       </BrowserRouter>     
   </React.StrictMode>
 );

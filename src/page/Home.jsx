@@ -1,9 +1,9 @@
-import Modal from "../componant/modal/Modal";
+import Modalcreate from "../componant/modal/Modal";
 import "../styles/Home.css";
 
 function Home() {
     return(
-        <Modal/>
+        <Modalcreate/>
     )
     
 }

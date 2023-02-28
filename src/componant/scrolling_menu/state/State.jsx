@@ -2,7 +2,7 @@ import { useState } from "react";
 import states from "../../../data/state";
 
 function State() {
-    const [Value, setValue] = useState("")
+    const [value, setValue] = useState("")
 
     return(
         <select name="state" id="state" onChange={(e) => setValue(e.target.value)}>

@@ -1,7 +1,12 @@
 import Department from "../scrolling_menu/department/Department"
 import State from "../scrolling_menu/state/State";
+import React, { useState } from "react";
+import Modal from "bf59modal-lib/dist/components/modal";
 
-function Modal() {
+function Modalcreate() {
+
+    const [isOpen, setIsOpen]= useState(false);
+
     return(
         <div className="container">
             <h2>Create Employee</h2>
@@ -35,8 +40,9 @@ function Modal() {
                 </fieldset>
                 <Department/>
             </form>
-            <button>Save</button>
+            <button className="button-28" onClick={() => setIsOpen(true)}>Save</button>
+            {isOpen && <Modal setIsOpen={setIsOpen} modalText="Employee Created!" />}
         </div>
     )
 }
-export default Modal
+export default Modalcreate

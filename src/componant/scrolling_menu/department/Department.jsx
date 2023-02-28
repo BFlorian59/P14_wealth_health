@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 function Department() {
-    const [Value, setValue] = useState("")
+    const [value, setValue] = useState("")
 
     return(
         <div>

@@ -2,6 +2,8 @@ import Department from "../scrolling_menu/department/Department"
 import State from "../scrolling_menu/state/State";
 import React, { useState } from "react";
 import Modal from "bf59modal-lib/dist/components/modal";
+import DateInput from "../../utils/date";
+import "../../styles/Dateinput.css"
 
 function Modalcreate() {
 
@@ -18,11 +20,11 @@ function Modalcreate() {
                 <input type="text" id="last-name" />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                <input id="date-of-birth" type="text" ></input>
+                <DateInput/>
 
                 <label htmlFor="start-date">Start Date</label>
-                <input id="start-date" type="text" ></input>
-
+                <DateInput/>
+                
                 <fieldset className="address">
                     <legend>Address</legend>
 

@@ -2,6 +2,7 @@ import Department from "../scrolling_menu/department/Department"
 import State from "../scrolling_menu/state/State";
 import React, { useState } from "react";
 import Modal from "bf59modal-lib/dist/components/modal";
+import "bf59modal-lib/dist/components/modal.css";
 import DateInput from "../../utils/date";
 import "../../styles/Dateinput.css"
 

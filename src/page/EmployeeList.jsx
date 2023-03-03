@@ -1,6 +1,11 @@
+import Table from "../componant/table/table";
+
 function EmployeeList() {
     return(
-        <p>Current Employees</p>
+        <div className="EmployeeList">
+            <h2>Current Employees</h2>
+            <Table/>
+        </div> 
     )
 }
 

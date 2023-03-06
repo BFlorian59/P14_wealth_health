@@ -41,7 +41,7 @@ function Table() {
             accessor: 'col4',
           },
           {
-            Header: 'Daue of Birth',
+            Header: 'Date of Birth',
             accessor: 'col5',
           },
           {
@@ -74,45 +74,45 @@ function Table() {
       } = tableInstance
    
     return (
-        <table {... getTableProps()}>
-            <thead>
+      <table {... getTableProps()}>
+        <thead>
+          {
+            headerGroups.map(headerGroup => (
+              <tr {... headerGroup.getHeaderGroupProps()}>
                 {
-                    headerGroups.map(headerGroup => (
-                        <tr {... headerGroup.getHeaderGroupProps()}>
-                            {
-                                headerGroup.headers.map(column =>(
-                                    <th {... column.getHeaderProps()}>
-                                        {
-                                            column.render('Header')
-                                        }
-                                    </th>
-                                ))
-                            }
-                        </tr>
-                    ))
+                  headerGroup.headers.map(column =>(
+                    <th {... column.getHeaderProps()}>
+                      {
+                        column.render('Header')
+                      }
+                    </th>
+                  ))
                 }
-            </thead>
-            <tbody {... getTableBodyProps()}>
-                {
-                    rows.map(row =>{
-                        prepareRow(row)
-                        return(
-                            <tr {...row.getRowProps()}>
-                                {
-                                    row.cells.map(cell => {
-                                        return(
-                                            <td {...cell.getCellProps()}>
-                                                {cell.render('Cell')}
-                                            </td>
-                                        )
-                                    })
-                                }
-                            </tr>
-                        )
+              </tr>
+            ))
+          }
+        </thead>
+        <tbody {... getTableBodyProps()}>
+          {
+            rows.map(row =>{
+              prepareRow(row)
+              return(
+                <tr {...row.getRowProps()}>
+                  {
+                    row.cells.map(cell => {
+                      return(
+                        <td {...cell.getCellProps()}>
+                          {cell.render('Cell')}
+                        </td>
+                      )
                     })
-                }
-            </tbody>
-        </table>
+                  }
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
     )
 }
 

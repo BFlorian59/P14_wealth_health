@@ -1,11 +1,10 @@
-import { useState } from "react";
 import states from "../../../data/state";
 
-function State() {
-    const [value, setValue] = useState("")
+function State({onChange}) {
+    
 
     return(
-        <select name="state" id="state" onChange={(e) => setValue(e.target.value)}>
+        <select name="state" id="state" onChange={onChange}>
             {states.map((state) => {
                 return <option key={state.abbreviation} value={state.name}>{state.name}</option>
             })} 

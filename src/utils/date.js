@@ -1,14 +1,15 @@
 import DatePicker from "react-datepicker";
-import React, { useState } from "react";
+import React from "react";
 
-const DateInput = () => {
-    const [startDate, setStartDate] = useState(new Date());
+const DateInput = ({selected, onChange}) => {
+    
+    //console.log(startDate)
     return (
     <>
 
         <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            selected={selected}
+            onChange={onChange}
             peekNextMonth
             showMonthDropdown
             showYearDropdown

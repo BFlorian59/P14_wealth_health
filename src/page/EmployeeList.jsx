@@ -1,10 +1,10 @@
-import Table from "../componant/table/table";
+import DataGridTable from "../componant/table/tablegrid.tsx";
 
 function EmployeeList() {
     return(
         <div className="EmployeeList">
             <h2>Current Employees</h2>
-            <Table/>
+            <DataGridTable/>
         </div> 
     )
 }

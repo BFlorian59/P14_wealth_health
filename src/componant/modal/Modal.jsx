@@ -1,6 +1,6 @@
 import Department from "../scrolling_menu/department/Department"
 import State from "../scrolling_menu/state/State";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "bf59modal-lib/dist/components/modal";
 import "bf59modal-lib/dist/components/modal.css";
 import DateInput from "../../utils/date";
@@ -12,7 +12,7 @@ function Modalcreate() {
     const [isOpen, setIsOpen]= useState(false);
 
     const [employee, setemployee]= useState({
-        firsname:"",
+        firstname:"",
         lastname:"",
         datebirth: birthDate,
         startdate: startDate,
@@ -23,20 +23,22 @@ function Modalcreate() {
         zip:"",
     })
 
+
     if(isOpen){
-        console.log(employee)
-        localStorage.setItem('employee-info', JSON.stringify(employee))
-    }
+        console.log([employee])
+        localStorage.setItem('employee-info', JSON.stringify([employee]))
+    }       
+   
     
     return(
         <div className="container">
             <h2>Create Employee</h2>
             <form>
                 <label htmlFor="first-name">First Name</label>
-                <input onChange={(firsname)=>{
+                <input onChange={(firstname)=>{
                     setemployee({
                         ...employee,
-                        firsname: firsname.currentTarget.value
+                        firstname: firstname.currentTarget.value
                     })
                 }} type="text" id="first-name" />
 

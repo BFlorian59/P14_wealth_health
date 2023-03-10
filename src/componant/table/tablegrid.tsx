@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import { DataGrid, GridColDef} from '@mui/x-data-grid';
 import "../../styles/table.css"
 
+
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 20 },
   {
@@ -76,7 +77,9 @@ const rows = [
   { id: 2, lastName: 'Lannister', firstName: 'Cersei', Startday:null, Department:null, DateBirth:null, Street:null, City:null, State:null, ZipCode:null},
 ];
 
-export default function DataGridDemo() {
+export default function TableGrid() {
+    const employeee = localStorage.getItem('employee-info')
+    
   return (
     <Box sx={{ height: 400, width: '92.3%', margin: 'auto', boxShadow: '0 0 20px rgba(0, 0, 0, 0.15)'}}>
       <DataGrid

@@ -5,6 +5,7 @@ import Modal from "bf59modal-lib/dist/components/modal";
 import "bf59modal-lib/dist/components/modal.css";
 import DateInput from "../../utils/date";
 import "../../styles/Dateinput.css"
+import emp from "../../data/employee";
 
 function Modalcreate() {
     const [startDate, setStartDate] = useState(new Date());
@@ -22,12 +23,17 @@ function Modalcreate() {
         department: "",
         zip:"",
     })
-
-
-    if(isOpen){
-        console.log([employee])
-        localStorage.setItem('employee-info', JSON.stringify([employee]))
-    }       
+      
+   
+    useEffect(() => {
+        if(isOpen){
+            emp.push(employee);
+            console.log(emp)
+            localStorage.setItem('employee-info', JSON.stringify(emp))
+        }  
+    }, [employee, isOpen]);
+        
+          
    
     
     return(

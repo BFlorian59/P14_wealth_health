@@ -6,6 +6,7 @@ import "bf59modal-lib/dist/components/modal.css";
 import DateInput from "../../utils/date";
 import "../../styles/Dateinput.css"
 import emp from "../../data/employee";
+import { idID } from "@mui/material/locale";
 
 function Modalcreate() {
     const [startDate, setStartDate] = useState(new Date());
@@ -24,7 +25,9 @@ function Modalcreate() {
         zip:"",
     })
       
-   
+   function clear() {
+        localStorage.clear()
+   }
     useEffect(() => {
         if(isOpen){
             emp.push(employee);
@@ -105,6 +108,7 @@ function Modalcreate() {
                     }}/>
             </form>
             <button className="button-28" onClick={() => setIsOpen(true)}>Save</button>
+            <button className="button-28" onClick={() => clear()}>clear</button>
             {isOpen && <Modal setIsOpen={setIsOpen} modalText="Employee Created!" />}
         </div>
     )

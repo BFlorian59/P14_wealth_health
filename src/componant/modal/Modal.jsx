@@ -16,8 +16,8 @@ function Modalcreate() {
     const [employee, setemployee]= useState({
         firstname:"",
         lastname:"",
-        datebirth: birthDate,
-        startdate: startDate,
+        datebirth: birthDate.toISOString().split('T')[0],
+        startdate: startDate.toISOString().split('T')[0],
         street:"",
         city:"",
         state: "",
@@ -25,9 +25,9 @@ function Modalcreate() {
         zip:"",
     })
       
-   function clear() {
-        localStorage.clear()
-   }
+//    function clear() {
+//         localStorage.clear()
+//    }
     useEffect(() => {
         if(isOpen){
             emp.push(employee);
@@ -108,7 +108,7 @@ function Modalcreate() {
                     }}/>
             </form>
             <button className="button-28" onClick={() => setIsOpen(true)}>Save</button>
-            <button className="button-28" onClick={() => clear()}>Clear</button>
+            {/* <button className="button-28" onClick={() => clear()}>Clear</button> */}
             {isOpen && <Modal setIsOpen={setIsOpen} modalText="Employee Created!" />}
         </div>
     )

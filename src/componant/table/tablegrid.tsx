@@ -153,6 +153,7 @@ export default function TableGrid() {
             clearSearch: () => requestSearch(''),
           },
         }}
+        
         initialState={{
           pagination: {
             paginationModel: {
@@ -161,8 +162,7 @@ export default function TableGrid() {
           },
           
         }}
-        
-        pageSizeOptions={[5]}
+        pageSizeOptions={[5, 10, 25]}
         disableRowSelectionOnClick
         disableColumnSelector
         disableColumnMenu

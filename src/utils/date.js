@@ -3,7 +3,7 @@ import React from "react";
 
 const DateInput = ({selected, onChange}) => {
     
-    //console.log(startDate)
+
     return (
     <>
 
@@ -14,6 +14,7 @@ const DateInput = ({selected, onChange}) => {
             showMonthDropdown
             showYearDropdown
             dropdownMode="select"
+            dateFormat="dd/MM/yyyy"
         />
     </>
       

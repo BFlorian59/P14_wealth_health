@@ -5,7 +5,6 @@ import Modal from "bf59modal-lib/dist/components/modal";
 import "bf59modal-lib/dist/components/modal.css";
 import DateInput from "../../utils/date";
 import "../../styles/Dateinput.css"
-import emp from "../../data/employee";
 
 
 function Modalcreate() {
@@ -25,20 +24,21 @@ function Modalcreate() {
         zip:"",
     })
       
-//    function clear() {
-//         localStorage.clear()
-//    }
+   function clear() {
+        localStorage.clear()
+   }
     useEffect(() => {
         if(isOpen){
+            var emp = JSON.parse(localStorage.getItem('employee-info'))
+            if (emp === null ) {
+                emp =[]
+            }
             emp.push(employee);
-            console.log(emp)
-            localStorage.setItem('employee-info', JSON.stringify(emp))
+            localStorage.setItem('employee-info', JSON.stringify(emp)) 
         }  
+
     }, [employee, isOpen]);
-        
-          
-   
-    
+ 
     return(
         <div className="container">
             <h2>Create Employee</h2>
@@ -108,7 +108,7 @@ function Modalcreate() {
                     }}/>
             </form>
             <button className="button-28" onClick={() => setIsOpen(true)}>Save</button>
-            {/* <button className="button-28" onClick={() => clear()}>Clear</button> */}
+            <button className="button-28" onClick={() => clear()}>Clear</button>
             {isOpen && <Modal setIsOpen={setIsOpen} modalText="Employee Created!" />}
         </div>
     )

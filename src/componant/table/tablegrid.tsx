@@ -124,6 +124,7 @@ export default function TableGrid() {
   if(employee){
     var tab_emp = JSON.parse((employee)|| '{}');
   }
+  console.log(tab_emp)
 
   const [searchText, setSearchText] = React.useState('');
   const [rows, setRows] = React.useState<any[]>(tab_emp);

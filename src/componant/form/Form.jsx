@@ -24,9 +24,9 @@ function Modalcreate() {
         zip:"",
     })
       
-   function clear() {
-        localStorage.clear()
-   }
+//    function clear() {
+//         localStorage.clear()
+//    }
     useEffect(() => {
         if(isOpen){
             var emp = JSON.parse(localStorage.getItem('employee-info'))
@@ -108,7 +108,7 @@ function Modalcreate() {
                     }}/>
             </form>
             <button className="button-28" onClick={() => setIsOpen(true)}>Save</button>
-            <button className="button-28" onClick={() => clear()}>Clear</button>
+            {/* <button className="button-28" onClick={() => clear()}>Clear</button> */}
             {isOpen && <Modal setIsOpen={setIsOpen} modalText="Employee Created!" />}
         </div>
     )

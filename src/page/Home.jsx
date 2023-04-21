@@ -2,8 +2,9 @@ import Modalcreate from "../componant/form/Form";
 import "../styles/Home.css";
 
 function Home() {
-    return(
-        <Modalcreate/>
+   
+    return( 
+        <Modalcreate />  
     )
     
 }

@@ -6,6 +6,8 @@ import IconButton from '@material-ui/core/IconButton';
 import TextField from '@material-ui/core/TextField';
 import ClearIcon from '@material-ui/icons/Clear';
 import SearchIcon from '@material-ui/icons/Search';
+import{ useContext} from "react";
+import { UserContext } from "../../utils/context/contextuser";
 
 
 function escapeRegExp(value) {
@@ -119,20 +121,22 @@ function QuickSearchToolbar(props: QuickSearchToolbarProps) {
 
 
 export default function TableGrid() {
-  const employee = localStorage.getItem('employee-info')
+  // const employee = localStorage.getItem('employee-info')
 
-  if(employee){
-    var tab_emp = JSON.parse((employee)|| '{}');
-  }
-  console.log(tab_emp)
+  // if(employee){
+  //   var tab_emp = JSON.parse((employee)|| '{}');
+  // }
+  // console.log(tab_emp)
+  var {user}:any = useContext(UserContext)
+  console.log(user)
 
   const [searchText, setSearchText] = React.useState('');
-  const [rows, setRows] = React.useState<any[]>(tab_emp);
+  const [rows, setRows] = React.useState<any[]>(user);
 
   const requestSearch = (searchValue: string) => {
     setSearchText(searchValue);
     const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
-    const filteredRows = tab_emp.filter((row: any) => {
+    const filteredRows = user.filter((row: any) => {
       return Object.keys(row).some((field: any) => {
         return searchRegex.test(row[field].toString());
       });
@@ -140,10 +144,10 @@ export default function TableGrid() {
     setRows(filteredRows);
   };
  
-  return employee ? (
+  return user ? (
     <Box sx={{ height: 400, width: '92.3%', margin: 'auto', boxShadow: '0 0 20px rgba(0, 0, 0, 0.15)'}}>
       <DataGrid 
-        getRowId={(row: any) =>  row.firstname + row.lastname}
+        getRowId={(row: any) =>row.id}
         components={{ Toolbar: QuickSearchToolbar }}
         rows={rows}
         columns={colonne}
